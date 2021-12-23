@@ -9,113 +9,177 @@
 
     <LinearLayout
         android:id="@+id/linearLayout"
-        android:layout_width="379dp"
-        android:layout_height="581dp"
-        android:layout_marginTop="200dp"
+        android:layout_width="372dp"
+        android:layout_height="553dp"
         android:gravity="center|top"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.567"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.761">
-
-
+        app:layout_constraintTop_toTopOf="parent">
 
 
         <TextView
             android:id="@+id/textView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Ingresa tu  fecha" />
+            android:text="Titulo Noticia"
+            android:textAlignment="viewStart"
+            android:textSize="20sp"
+            android:textStyle="bold" />
 
-
-        <DatePicker
-            android:id="@+id/calendarioSpinner"
-            android:layout_width="317dp"
-            android:layout_height="157dp"
-            android:calendarViewShown="false"
-            android:datePickerMode="spinner"
-            android:text="TextView"
-            app:layout_constraintBottom_toTopOf="@+id/button"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+        <EditText
+            android:id="@+id/campoTitulo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center|center_vertical"
+            android:ems="10"
+            android:gravity="center|center_horizontal|center_vertical"
+            android:hint="Titulo Aquí"
+            android:inputType="textPersonName"
+            android:textAlignment="textStart"
+            android:textStyle="italic" />
 
         <TextView
-            android:id="@+id/etiquetaHora"
-            android:layout_width="wrap_content"
+            android:id="@+id/textView6"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Seleccione hora desde boton"
-            android:textSize="24sp"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toTopOf="@+id/botonReloj"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-        <Button
-            android:id="@+id/botonReloj"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:onClick="seleccionarHora"
-            android:text="Selecciona la hora"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:text="Contenido Noticia"
+            android:textAlignment="viewStart"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/campoTexto"
+            android:layout_width="match_parent"
+            android:layout_height="106dp"
+            android:ems="10"
+            android:gravity="center"
+            android:inputType="textPersonName"
+            android:text="Contenido Aquí "
+            android:textStyle="italic" />
 
         <TextView
             android:id="@+id/textView3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Ingresa tipo cancha"
+            android:text="Sube una foto"
+            android:textAlignment="viewStart"
+            android:textSize="20sp"
+            android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
 
-        <EditText
-            android:id="@+id/entradaTipoCancha"
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="140dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/fotito"
+                android:layout_width="147dp"
+                android:layout_height="match_parent"
+                tools:srcCompat="@tools:sample/avatars" />
+
+            <LinearLayout
+                android:layout_width="219dp"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <Button
+                    android:id="@+id/button25"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginBottom="2dp"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:insetTop="0dp"
+                    android:insetBottom="0dp"
+                    android:onClick="TomarFoto"
+                    android:text="tomar foto"
+                    android:textSize="14sp" />
+
+                <Button
+                    android:id="@+id/button2"
+                    android:layout_width="match_parent"
+                    android:layout_height="33dp"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginBottom="2dp"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:insetTop="0dp"
+                    android:insetBottom="0dp"
+                    android:onClick="GuardarFoto"
+                    android:text="Guardar foto"
+                    android:textSize="14sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <Button
+                    android:id="@+id/button3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginBottom="2dp"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:insetTop="0dp"
+                    android:insetBottom="0dp"
+                    android:onClick="CargarFoto"
+                    android:text="Cargar foto"
+                    android:textSize="14sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/textView7"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:ems="10"
-            android:hint="Tenis, Futbol, etc"
-            android:inputType="text"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            android:text="Lugar de la Noticia"
+            android:textAlignment="viewStart"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="59dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/campoCoordenada"
+                android:layout_width="180dp"
+                android:layout_height="wrap_content"
+                android:gravity="center|center_vertical"
+                android:text="log, latitud"
+                android:textSize="16sp"
+                android:textStyle="italic" />
+
+            <Button
+                android:id="@+id/irMapa"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Ir al mapa" />
+        </LinearLayout>
 
         <Button
             android:id="@+id/button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:onClick="ReservarHora"
-            android:text="Reservar Hora"
+            android:onClick="GuardaNoticia"
+            android:text="enviar noticia"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
 
         <Button
             android:id="@+id/btnVerReservas"
-            android:onClick="verReservas"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Ver Reservas" />
+            android:onClick="verReservas"
+            android:text="Ver todas las noticias" />
+
     </LinearLayout>
-
-    <TextView
-        android:id="@+id/etiquetaIntent"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingLeft="20dp"
-
-        android:text="Reserva de Hora"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.7" />
-
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

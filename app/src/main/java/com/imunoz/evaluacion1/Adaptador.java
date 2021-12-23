@@ -14,9 +14,9 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 
 public class Adaptador extends RecyclerView.Adapter<Adaptador.ViewHolder>{
-    public ArrayList<Reserva> reservas;
-    public Adaptador(ArrayList<Reserva> reservas){
-        this.reservas = reservas;
+    public ArrayList<Noticia> noticias;
+    public Adaptador(ArrayList<Noticia> noticias){
+        this.noticias = noticias;
     }
 
     @NonNull
@@ -29,14 +29,14 @@ public class Adaptador extends RecyclerView.Adapter<Adaptador.ViewHolder>{
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         holder.foto.setImageResource(R.drawable.ic_launcher_background);
-        holder.titulo.setText(reservas.get(position).getFecha()  );
-        holder.texto.setText(reservas.get(position).getHora());
-        holder.tipoCancha.setText(reservas.get(position).getTipoCancha());
+        holder.titulo.setText(noticias.get(position).getTitulo()  );
+        holder.texto.setText(noticias.get(position).getTexto());
+        holder.coordenada.setText(noticias.get(position).getCoordenada());
 
        // holder.texto.setText(reservas.get(position).getTipoCancha());
 
 
-        holder.reserva = reservas.get(position);
+        holder.noticia = noticias.get(position);
 
         holder.foto.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -49,15 +49,15 @@ public class Adaptador extends RecyclerView.Adapter<Adaptador.ViewHolder>{
 
     @Override
     public int getItemCount() {
-        return reservas.size();
+        return noticias.size();
     }
 
 
     public static class ViewHolder extends RecyclerView.ViewHolder{
         private ImageView foto;
-        private TextView titulo, texto,tipoCancha;
+        private TextView titulo, texto,coordenada;
         private Button botonNumero, botonEliminar;
-        private Reserva reserva;
+        private Noticia noticia;
         private Adaptador adaptador;
 
         public ViewHolder(View itemView){
@@ -66,7 +66,8 @@ public class Adaptador extends RecyclerView.Adapter<Adaptador.ViewHolder>{
             foto = itemView.findViewById(R.id.foto);
             titulo = itemView.findViewById(R.id.titulo);
             texto = itemView.findViewById(R.id.texto);
-            tipoCancha = itemView.findViewById(R.id.tipoCancha);
+            coordenada = itemView.findViewById(R.id.campoCoordenada);
+
             botonNumero = itemView.findViewById(R.id.botonNumeros);
             botonEliminar = itemView.findViewById(R.id.botonEliminar);
 
@@ -82,17 +83,12 @@ public class Adaptador extends RecyclerView.Adapter<Adaptador.ViewHolder>{
                 public void onClick(View view) {
 
                     StringBuilder sb =new StringBuilder();
-                    sb.append("----Reserva----");
-                    sb.append("\n Fecha:"+adaptador.reservas.get(getAdapterPosition()).getFecha());
-                    sb.append("\n Hora:"+adaptador.reservas.get(getAdapterPosition()).getHora());
-                    sb.append("\n Tipo cancha:"+adaptador.reservas.get(getAdapterPosition()).getTipoCancha());
-
-
-
+                    sb.append("Noticia");
+                    sb.append("\n"+adaptador.noticias.get(getAdapterPosition()).getTitulo());
+                    sb.append("\n"+adaptador.noticias.get(getAdapterPosition()).getTexto());
+                    sb.append("\n"+adaptador.noticias.get(getAdapterPosition()).getCoordenada());
 
                     Toast.makeText(view.getContext(), sb.toString(), Toast.LENGTH_LONG).show();
-
-
 
                 }
             });
@@ -100,9 +96,9 @@ public class Adaptador extends RecyclerView.Adapter<Adaptador.ViewHolder>{
             botonEliminar.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    adaptador.reservas.remove(getAdapterPosition());
+                    adaptador.noticias.remove(getAdapterPosition());
                     adaptador.notifyItemRemoved(getAdapterPosition());
-                    adaptador.notifyItemRangeChanged(getAdapterPosition(), adaptador.reservas.size());
+                    adaptador.notifyItemRangeChanged(getAdapterPosition(), adaptador.noticias.size());
                 }
             });
 

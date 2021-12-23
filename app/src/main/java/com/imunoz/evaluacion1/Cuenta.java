@@ -7,7 +7,7 @@ public class Cuenta implements Serializable {
 
     private String nombre;
     private String apellido;
-    private ArrayList<Reserva> listaReservas= new ArrayList<Reserva>();
+    private ArrayList<Noticia> listaNoticias = new ArrayList<Noticia>();
     //private ArrayList<>
 
     public Cuenta(){
@@ -37,11 +37,11 @@ public class Cuenta implements Serializable {
     }
 
 
-    public ArrayList<Reserva> getListaReservas() {
-        return listaReservas;
+    public ArrayList<Noticia> getListaReservas() {
+        return listaNoticias;
     }
 
-    public void setListaReservas(ArrayList<Reserva> listaReservas) {
-        this.listaReservas = listaReservas;
+    public void setListaReservas(ArrayList<Noticia> listaNoticias) {
+        this.listaNoticias = listaNoticias;
     }
 }

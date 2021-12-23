@@ -6,7 +6,7 @@ android {
     compileSdk 31
 
     defaultConfig {
-        applicationId "com.imunoz.evaluacion1"
+        applicationId 'com.JPPKT.Envia_tu_noticia'
         minSdk 23
         targetSdk 31
         versionCode 1
